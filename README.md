@@ -17,6 +17,14 @@ M5Stack社が発売した StampFly と AtomJoyStick のファームウェアの�
 
 - こうへい版シンプルファームウエア https://github.com/M5Fly-kanazawa/Simple_StampFly_Joy
 
+## どこから読めばいいのか
+
+### まずは'main_loop.cpp'から
+'main_loop.cpp'の中のvoid 'loop_400Hz(void)'関数から読んでみてください。ここにオリジナルコードを追加していくことになると思います。
+
+### 次は'sensor.cpp'
+センサの処理が書かれているので'sensor.cpp'も重要です。
+
 ## 参考資料
 
 - StampFly & Atom ジョイスティック ファームウェア書き込みガイド https://docs.m5stack.com/ja/guide/hobby_kit/stampfly/stamply_firmware
