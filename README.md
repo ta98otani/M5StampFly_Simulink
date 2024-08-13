@@ -41,3 +41,6 @@ M5Stack社が発売した StampFly と AtomJoyStick のファームウェアの�
 |Product Weight|36.2 g|
 
 ### M5 Atom JoyStick関連
+
+- オリジナルファームウェア https://github.com/m5stack/Atom-JoyStick
+- こうへい版シンプルファームウエア https://github.com/M5Fly-kanazawa/Simple_StampFly_Joy
