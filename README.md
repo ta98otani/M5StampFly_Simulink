@@ -13,6 +13,9 @@ M5Stack社が発売した StampFly と AtomJoyStick のファームウェアの�
 - 要望がたくさんあえrばオプティカルフローや気圧などのAPIも提供
 - 使い方の資料や講習会
 
+## 対応するコントローラ
+
+- こうへい版シンプルファームウエア https://github.com/M5Fly-kanazawa/Simple_StampFly_Joy
 
 ## 参考資料
 
