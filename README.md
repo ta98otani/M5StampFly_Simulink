@@ -19,11 +19,11 @@ M5Stack社が発売した StampFly と AtomJoyStick のファームウェアの�
 
 ## どこから読めばいいのか
 
-### まずは'main_loop.cpp'から
-'main_loop.cpp'の中のvoid 'loop_400Hz(void)'関数から読んでみてください。ここにオリジナルコードを追加していくことになると思います。
+### まずは''main_loop.cpp''から
+''main_loop.cpp''の中のvoid ''loop_400Hz(void)''関数から読んでみてください。ここにオリジナルコードを追加していくことになると思います。
 
-### 次は'sensor.cpp'
-センサの処理が書かれているので'sensor.cpp'も重要です。
+### 次は''sensor.cpp''
+センサの処理が書かれているので''sensor.cpp''も重要です。
 
 ## 参考資料
 
