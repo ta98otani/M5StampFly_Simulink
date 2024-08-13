@@ -51,7 +51,7 @@ void init_mode(void);
 void average_mode(void);
 void flight_mode(void);
 void parking_mode(void);
-void loop_400Hz(void *pvParameters);
+void loop_400Hz(void);
 
 // Main loop
 void loop_400Hz(void) {
