@@ -174,7 +174,12 @@ void flight_mode(void) {
     // Set LED Color
     onboard_led1(YELLOW, 1);
     onboard_led2(YELLOW, 1);
-
+    
+    motor_set_duty_fl(0.15);
+    motor_set_duty_fr(0.15);
+    motor_set_duty_rl(0.15);
+    motor_set_duty_rr(0.15);
+    if (StampFly.times.elapsed_time > 5.0)StampFly.flag.mode = PARKING_MODE;
 }
 
 void parking_mode(void) {
@@ -182,5 +187,14 @@ void parking_mode(void) {
     // Set LED Color
     onboard_led1(GREEN, 1);
     onboard_led2(GREEN, 1);
-
+    
+    motor_stop();
+    //if (StampFly.times.elapsed_time > 2.0 && StampFly.times.elapsed_time < 5.0)StampFly.flag.mode = FLIGHT_MODE;
+    USBSerial.printf("%9.4f %9.4f %9.4f %9.4f %1.0f %1.0f \n\r", 
+        Stick[THROTTLE], 
+        Stick[AILERON],
+        Stick[ELEVATOR],
+        Stick[RUDDER],
+        Stick[CONTROLMODE],
+        Stick[ALTCONTROLMODE]);
 }
