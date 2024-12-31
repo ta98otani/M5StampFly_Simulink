@@ -171,6 +171,10 @@ void average_mode(void) {
 
 void flight_mode(void) {
     //飛行するためのコードを以下に記述する
+    // Set LED Color
+    onboard_led1(YELLOW, 1);
+    onboard_led2(YELLOW, 1);
+
 }
 
 void parking_mode(void) {
