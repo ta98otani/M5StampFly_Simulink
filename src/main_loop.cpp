@@ -52,6 +52,7 @@ void average_mode(void);
 void flight_mode(void);
 void parking_mode(void);
 void loop_400Hz(void);
+float limit(float value, float min, float max);
 
 // Main loop
 void loop_400Hz(void) {
@@ -174,12 +175,13 @@ void flight_mode(void) {
     // Set LED Color
     onboard_led1(YELLOW, 1);
     onboard_led2(YELLOW, 1);
-    
-    motor_set_duty_fl(0.15);
-    motor_set_duty_fr(0.15);
-    motor_set_duty_rl(0.15);
-    motor_set_duty_rr(0.15);
-    if (StampFly.times.elapsed_time > 5.0)StampFly.flag.mode = PARKING_MODE;
+    float throttle_delta = limit(Stick[THROTTLE], 0.0, 0.9);
+
+    motor_set_duty_fl(throttle_delta);
+    motor_set_duty_fr(throttle_delta);
+    motor_set_duty_rl(throttle_delta);
+    motor_set_duty_rr(throttle_delta);
+    if (StampFly.times.elapsed_time > 12.0)StampFly.flag.mode = PARKING_MODE;
 }
 
 void parking_mode(void) {
@@ -189,12 +191,11 @@ void parking_mode(void) {
     onboard_led2(GREEN, 1);
     
     motor_stop();
-    //if (StampFly.times.elapsed_time > 2.0 && StampFly.times.elapsed_time < 5.0)StampFly.flag.mode = FLIGHT_MODE;
-    USBSerial.printf("%9.4f %9.4f %9.4f %9.4f %1.0f %1.0f \n\r", 
-        Stick[THROTTLE], 
-        Stick[AILERON],
-        Stick[ELEVATOR],
-        Stick[RUDDER],
-        Stick[CONTROLMODE],
-        Stick[ALTCONTROLMODE]);
+    if (StampFly.times.elapsed_time > 2.0 && StampFly.times.elapsed_time < 12.0)StampFly.flag.mode = FLIGHT_MODE;
+}
+
+float limit(float value, float min, float max) {
+    if (value < min) return min;
+    if (value > max) return max;
+    return value;
 }
