@@ -1,10 +1,11 @@
 # M5StampFly Simulink
 
-オリジナルM5StampFlyスケルトンコードをベースに、MathWorks Simulinkで動作する用に変更を加え得たベースコード
+オリジナルM5StampFlyスケルトンコードをベースに、MathWorks Simulinkで動作する用に変更を加えたコード
 
 ## 方針
-基本的には、ベースAPIを全て利用し、400Hzでループされるコード部分のみ、SimlulinkからのCode生成に頼る
+基本的には、ベースAPIを全て利用し、400Hzでループされるコード部分のみ、SimlulinkからのCode生成を利用する（Embedded Coderを利用する）
 最終的にマージしたコードはPlatformIOでビルドを行う
+XCP on WIFI経由にて、内部データをSimulink側にて確認／モニタできるようにする
 
 ### M5 Stamp Fly関連
 
